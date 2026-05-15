@@ -1,0 +1,3 @@
+repository "Dread of the Dead Demo/Dread of the Dead Demo@7972030647604@cloud"
+  path "/"
+    smartbranch "/main"

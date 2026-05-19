@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform mainCameraTransform;
+    [SerializeField] private Animator animator;
 
     [Header("Movement Stats")]
     [SerializeField] private float walkSpeed = 3.0f;
@@ -15,9 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
 
     private PlayerInputControls inputActions;
-    private Vector3 velocity; // Used for gravity
-    
-    // Tracking states
+    private Vector3 velocity; 
     private bool isAiming = false;
 
     private void Awake()
@@ -25,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
         inputActions = new PlayerInputControls();
         controller = GetComponent<CharacterController>();
         
-        // Automatically find the main camera if we forgot to drag it in
+        if (animator == null) animator = GetComponentInChildren<Animator>();
+        
         if (mainCameraTransform == null && Camera.main != null)
         {
             mainCameraTransform = Camera.main.transform;
@@ -39,10 +39,14 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleInputStates();
         
-        // If we are aiming, GDD says we CANNOT move.
         if (!isAiming)
         {
             HandleMovement();
+        }
+        else 
+        {
+            // If aiming, force speed to 0 so he stops walking
+            animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
         }
         
         ApplyGravity();
@@ -50,51 +54,54 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleInputStates()
     {
-        // Check if aiming button is held down
         isAiming = inputActions.Player.Aim.IsPressed();
     }
 
     private void HandleMovement()
     {
-        // 1. Get raw input
         Vector2 input = inputActions.Player.Move.ReadValue<Vector2>();
         bool isRunning = inputActions.Player.Run.IsPressed();
 
-        // 2. Calculate camera-relative directions
         Vector3 camForward = mainCameraTransform.forward;
         Vector3 camRight = mainCameraTransform.right;
 
-        // Flatten the vectors so Arthur doesn't tilt up/down
         camForward.y = 0;
         camRight.y = 0;
         camForward.Normalize();
         camRight.Normalize();
 
-        // 3. Create the final movement direction
         Vector3 moveDirection = (camForward * input.y + camRight * input.x).normalized;
 
-        // 4. Move the character
-        if (moveDirection.magnitude >= 0.1f)
+        // Calculate our current movement magnitude (0 to 1)
+        float inputMagnitude = moveDirection.magnitude;
+
+        if (inputMagnitude >= 0.1f)
         {
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
             controller.Move(moveDirection * currentSpeed * Time.deltaTime);
 
-            // 5. Rotate Arthur to face where he is walking
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            
+            // Send speed to the Animator (normalized between 0 and 1)
+            float animationSpeedPercent = isRunning ? 1f : 0.5f; 
+            animator.SetFloat("Speed", animationSpeedPercent, 0.1f, Time.deltaTime); // 0.1f adds smoothing
+        }
+        else
+        {
+            // Tell animator to go to Idle
+            animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
         }
     }
 
     private void ApplyGravity()
     {
-        // Basic gravity logic so Arthur stays on the floor
         if (controller.isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; // Small constant downward force to stick to slopes
+            velocity.y = -2f; 
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 }
-

@@ -25,6 +25,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "55ae8af0-a192-42cc-971d-4688f71078a7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "a5413d78-1d1f-4d35-99c2-e17272ac4f98",
@@ -197,7 +206,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -205,10 +214,10 @@
                 {
                     "name": "",
                     "id": "3e5a4d6f-2015-4cb3-8dd4-82a8c18480f4",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -227,7 +236,7 @@
                 {
                     "name": "",
                     "id": "1d39772b-2177-4bfd-813f-fed47463f8fb",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -241,7 +250,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -252,7 +261,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -263,7 +272,7 @@
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -274,7 +283,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -285,7 +294,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Quick Turn",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -307,7 +316,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Quick Turn",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -318,7 +327,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Quick Turn",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -329,7 +338,7 @@
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -340,7 +349,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -351,7 +360,7 @@
                     "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -370,7 +379,7 @@
                 {
                     "name": "",
                     "id": "d1862683-2fd5-444e-b204-59929093ba25",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -428,7 +437,7 @@
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -494,7 +503,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Options Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -505,7 +514,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Options Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -516,7 +525,7 @@
                     "path": "<DualShockGamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Options Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -527,7 +536,7 @@
                     "path": "<SwitchProControllerHID>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Options Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -538,7 +547,7 @@
                     "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Options Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -549,7 +558,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Flashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -560,8 +569,30 @@
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Analog Controls;Tank Controls",
                     "action": "Flashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dba2ae35-e63d-4870-9ef9-c644d3c0e3a3",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Analog Controls;Tank Controls",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a43c028-36c4-4a69-9b45-f240cbc0e2ca",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Analog Controls;Tank Controls",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

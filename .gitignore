@@ -76,3 +76,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/StarterAssets/TutorialInfo/Icons.meta
+/Assets/_Project/ThirdParty
+/Assets/StarterAssets
+Assets/StarterAssets.meta

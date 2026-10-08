@@ -10,6 +10,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Tt]hirdParty/
+/[Ss]tarterAssets/
 *.log
 
 # MemoryCaptures can get excessive in size.
@@ -73,3 +75,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/StarterAssets/TutorialInfo/Icons.meta
+/Assets/_Project/ThirdParty
+/Assets/StarterAssets
+Assets/StarterAssets.meta
